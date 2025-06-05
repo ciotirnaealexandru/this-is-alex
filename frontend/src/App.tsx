@@ -1,6 +1,6 @@
 import { Routes, Route, Navigate } from "react-router";
 import { useEffect, useState } from "react";
-import About from "./pages/About/About"
+import About from "./pages/About/About";
 
 function App() {
   const [firstLoad, setFirstLoad] = useState(true);
