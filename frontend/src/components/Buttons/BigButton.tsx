@@ -14,7 +14,7 @@ const BigButton = ({ children, path }: BigButtonProps) => {
 
   return (
     <div className="relative inline-flex  group">
-      <div className="absolute transitiona-all duration-500 opacity-0 -inset-px bg-gradient-to-r from-[#36f4be] via-[#cc40ff] to-[#06bdff] rounded-xl blur-lg group-hover:opacity-100 group-hover:-inset-1 group-hover:duration-300 animate-tilt"></div>
+      <div className="absolute transitiona-all duration-500 opacity-0 -inset-px bg-gradient-to-r from-[#36f4be] via-[#cc40ff] to-[#06bdff] rounded-lg blur-lg group-hover:opacity-100 group-hover:-inset-1 group-hover:duration-300 animate-tilt"></div>
       <button
         className="hover:cursor-pointer text-xl py-2 px-4 rounded-lg relative font-semibold text-white 0 bg-[#030712]"
         onClick={() => handleNavigation(path)}

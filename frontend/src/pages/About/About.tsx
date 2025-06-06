@@ -1,8 +1,6 @@
-import NavBar from "../../components/Navbar/NavBar";
 import Markdown from "react-markdown";
 import GradientBackground from "../../components/GradientBackground/GradientBackground";
 import MyButton from "../../components/Buttons/BigButton";
-import { useNavigate } from "react-router";
 
 const markdown = "# Hi, *Alex*!";
 

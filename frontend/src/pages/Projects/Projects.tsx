@@ -5,6 +5,7 @@ const Projects = () => {
   return (
     <NormalBackground>
       <NavBar />
+      <div className="bg-red-700 w-lg h-full"></div>
     </NormalBackground>
   );
 };
