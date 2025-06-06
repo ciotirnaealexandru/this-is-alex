@@ -2,17 +2,9 @@ import Markdown from "react-markdown";
 import GradientBackground from "../../components/GradientBackground/GradientBackground";
 import MyButton from "../../components/Buttons/BigButton";
 
-const markdown = "# Hi, *Alex*!";
-
 const About = () => {
   return (
     <GradientBackground>
-      {/*
-      <NavBar />
-      <div className="prose prose-invert">
-        <Markdown>{markdown}</Markdown>
-      </div>
-      */}
       <div className="mt-80 flex flex-col justify-center items-center text-white">
         <div className="w-max">
           <div className="text-7xl leading-10 font-semibold">
