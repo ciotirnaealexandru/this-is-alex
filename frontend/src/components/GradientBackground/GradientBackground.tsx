@@ -60,6 +60,7 @@ const GradientBackground = ({ children }: PageWrapperProps) => {
           diameter={25}
           color="#8268CB"
           blur={80}
+          delay={0.4}
         ></Circle>
         <Circle
           top={15}
@@ -67,6 +68,7 @@ const GradientBackground = ({ children }: PageWrapperProps) => {
           diameter={32}
           color="#80ffdb"
           blur={100}
+          delay={0}
         ></Circle>
         <Circle
           top={35}
@@ -74,6 +76,7 @@ const GradientBackground = ({ children }: PageWrapperProps) => {
           diameter={15}
           color="#00BCFF"
           blur={70}
+          delay={0.8}
         ></Circle>
 
         <Circle
@@ -82,6 +85,7 @@ const GradientBackground = ({ children }: PageWrapperProps) => {
           diameter={25}
           color="#00BCFF"
           blur={80}
+          delay={0.2}
         ></Circle>
         <Circle
           top={25}
@@ -89,6 +93,7 @@ const GradientBackground = ({ children }: PageWrapperProps) => {
           diameter={35}
           color="#8268CB"
           blur={80}
+          delay={1.0}
         ></Circle>
         <Circle
           top={25}
@@ -96,6 +101,7 @@ const GradientBackground = ({ children }: PageWrapperProps) => {
           diameter={12}
           color="#80ffdb"
           blur={30}
+          delay={0.6}
         ></Circle>
       </div>
       {children}
