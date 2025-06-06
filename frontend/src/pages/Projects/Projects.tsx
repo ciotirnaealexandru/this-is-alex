@@ -5,7 +5,9 @@ const Projects = () => {
   return (
     <NormalBackground>
       <NavBar />
-      <div className="bg-red-700 w-lg h-full"></div>
+
+      {/* The title column*/}
+      <div className="bg-[#030712] w-lg h-full"></div>
     </NormalBackground>
   );
 };
