@@ -1,5 +1,12 @@
+import NormalBackground from "../../components/NormalBackground/NormalBackground";
+import NavBar from "../../components/Navbar/NavBar";
+
 const Projects = () => {
-  return <div className="">lol</div>;
+  return (
+    <NormalBackground>
+      <NavBar />
+    </NormalBackground>
+  );
 };
 
 export default Projects;
