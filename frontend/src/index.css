@@ -6,3 +6,23 @@
 body {
   font-family: 'Inter', sans-serif;
 }
+
+/* i added this to display `` correctly with markdown because of clash with TailwindCSS*/
+.prose code::before,
+.prose code::after {
+  content: none !important;
+}
+.prose code {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 0.1em 0.4em;
+  border-radius: 0.25rem;
+  font-weight: 600;
+  color: inherit;
+}
+.prose-invert code {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 0.2em 0.4em;
+  border-radius: 0.25rem;
+  font-weight: 600;
+  color: inherit;
+}

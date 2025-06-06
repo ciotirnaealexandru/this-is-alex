@@ -6,7 +6,7 @@ interface PageWrapperProps {
 
 const NormalBackground = ({ children }: PageWrapperProps) => {
   return (
-    <div className="absolute top-0 left-0 w-full h-full bg-[#151821] overflow-hidden z-[-1]">
+    <div className="absolute top-0 left-0 w-full h-full bg-[#0f131d] overflow-hidden z-[-1]">
       {children}
     </div>
   );

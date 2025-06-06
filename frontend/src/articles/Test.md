@@ -1,55 +1,118 @@
-# Tema 2 MN
+# A demo of `react-markdown`
 
-**Autor:** Ciotîrnae Alexandru-Cosmin (314CC)
+`react-markdown` is a markdown component for React.
 
-**Punctaj pe checker-ul local:** 100p
+👉 Changes are re-rendered as you type.
 
-**Obs:** Comentariile in cod sunt in limba engleza
+👈 Try writing some markdown on the left.
 
-## Task 1
+## Overview
 
-### 1.1 Observatie _Plain Sound_ vs. _Plain Loop_
+- Follows [CommonMark](https://commonmark.org)
+- Optionally follows [GitHub Flavored Markdown](https://github.github.com/gfm/)
+- Renders actual React elements instead of using `dangerouslySetInnerHTML`
+- Lets you define your own components (to render `MyHeading` instead of `'h1'`)
+- Has a lot of plugins
 
-Plain Loop are in combinatie mult mai multe instrumente / game muzicale, asta ne dam seama din gama de culori rosu-galben care nu este concentrata neaparat pe anumite frecvente. Spre deosebire, Plain Loop are preponderent frecventele pe acea banda rosie, in jurul a 2000-3000Hz.
+## Contents
 
-Daca ne uitam pe axa timp, vedem ca Plain Loop e relativ uniformizata. Desi sunt separari (acele lucruri cu aspect dreptunghic) care indica beat-urile, fiind mai multe instrumente spectograma e mai amestecata. Plain Loop are separari clare, adica beat-uri scurte si bruste, vazute prin acele dungi albastre, care indica ca nu exista niciun sunet in acea perioada de timp.
+Here is an example of a plugin in action
+([`remark-toc`](https://github.com/remarkjs/remark-toc)).
+**This section is replaced by an actual table of contents**.
 
-### 1.2 Observatie _Plain Sound_ vs. _High Pass Sound_
+## Syntax highlighting
 
-Plain Sound avea inainte niste frecvente rosii joase. Ce a facut practic filtrul high-pass a fost sa scape de ele. Acum daca ne uitam pe High Pass Sound, ele nu mai exista. Mai mult, culorile par mult mai deschise, mai ales unde inainte era albastru inchis in acele spatii goale. Din ce inteleg, ele sunt un fel de leak de la filtrul high-pass, iar imaginea nu se mai reconstituie identic. Oricum principalul scop al filtrului high-pass, care se si vede, e sa scape de frecventele joase.
+Here is an example of a plugin to highlight code:
+[`rehype-starry-night`](https://github.com/rehypejs/rehype-starry-night).
 
-### 1.3 Observatie _Plain Sound_ vs. _Reverb Sound_
+```js
+import React from "react";
+import ReactDom from "react-dom";
+import { MarkdownHooks } from "react-markdown";
+import rehypeStarryNight from "rehype-starry-night";
 
-Atunci cand am facut convolutia cu sunetul de pestera, efectul principal a fost ca sunetul sa se tot reflecte si sa devina mai sters, in ecou. Asta se vede pt ca inaginea e preponderent galben cu rosu, adica acum a fost atinsa toata gama de frecvente pentru ca s-a lovit sunetul de pereti. Acele lucruri care par ca niste munti rosii de se sterg apoi reprezinta sunetul care initial era clar, apoi lovit de pereti devine din ce in ce mai fad.
+const markdown = `
+# Your markdown here
+`;
 
-`mono = stereo_to_mono(stereo)`
+ReactDom.render(
+  <MarkdownHooks rehypePlugins={[rehypeStarryNight]}>{markdown}</MarkdownHooks>,
+  document.querySelector("#content")
+);
+```
 
-`[S f t] = spectrogram(signal, fs, window_size)`
+Pretty neat, eh?
 
-`x = oscillator(freq, fs, dur, A, D, S, R)`
+## GitHub flavored markdown (GFM)
 
-`signal = high_pass(signal, fs, cutoff_freq)`
+For GFM, you can _also_ use a plugin:
+[`remark-gfm`](https://github.com/remarkjs/react-markdown#use).
+It adds support for GitHub-specific extensions to the language:
+tables, strikethrough, tasklists, and literal URLs.
 
-`signal = apply_reverb(signal, impulse_response)`
+These features **do not work by default**.
+👆 Use the toggle above to add the plugin.
 
-## Task 2
+|    Feature | Support              |
+| ---------: | :------------------- |
+| CommonMark | 100%                 |
+|        GFM | 100% w/ `remark-gfm` |
 
-`[x, y] = parse_data(filename)`
+~~strikethrough~~
 
-`coef = spline_c2 (x, y)`
+- [ ] task list
+- [x] checked item
 
-`y_interp = P_spline (coef, x, x_interp)`
+https://example.com
 
-`coef = vandermonde(x, y)`
+## HTML in markdown
 
-`y_interp = P_vandermonde (coef, x_interp)`
+⚠️ HTML in markdown is quite unsafe, but if you want to support it, you can
+use [`rehype-raw`](https://github.com/rehypejs/rehype-raw).
+You should probably combine it with
+[`rehype-sanitize`](https://github.com/rehypejs/rehype-sanitize).
 
-## Task 3
+<blockquote>
+  👆 Use the toggle above to add the plugin.
+</blockquote>
 
-`mat = read_mat(path)`
+## Components
 
-`reduced_mat = preprocess(mat, min_reviews)`
+You can pass components to change things:
 
-`similarity = cosine_similarity(A, B)`
+```js
+import React from "react";
+import ReactDom from "react-dom";
+import Markdown from "react-markdown";
+import MyFancyRule from "./components/my-fancy-rule.js";
 
-`recoms = recommendations(path, liked_theme, num_recoms, min_reviews, num_features)`
+const markdown = `
+# Your markdown here
+`;
+
+ReactDom.render(
+  <Markdown
+    components={{
+      // Use h2s instead of h1s
+      h1: "h2",
+      // Use a component instead of hrs
+      hr(props) {
+        const { node, ...rest } = props;
+        return <MyFancyRule {...rest} />;
+      },
+    }}
+  >
+    {markdown}
+  </Markdown>,
+  document.querySelector("#content")
+);
+```
+
+## More info?
+
+Much more info is available in the
+[readme on GitHub](https://github.com/remarkjs/react-markdown)!
+
+---
+
+A component by [Espen Hovlandsdal](https://espen.codes/)
