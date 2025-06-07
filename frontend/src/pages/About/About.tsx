@@ -4,9 +4,9 @@ import MyButton from "../../components/Buttons/BigButton";
 const About = () => {
   return (
     <GradientBackground>
-      <div className="mt-80 flex flex-col justify-center items-center text-white">
+      <div className="mt-64 flex flex-col justify-center items-center text-white">
         <div className="w-max">
-          <div className="text-7xl leading-10 font-semibold">
+          <div className="text-6xl leading-10 font-semibold">
             <div>Hi, I'm Alex.</div>
             <br />
             <div>I'm an engineer.</div>
