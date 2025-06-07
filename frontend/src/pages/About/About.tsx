@@ -1,4 +1,3 @@
-import Markdown from "react-markdown";
 import GradientBackground from "../../components/GradientBackground/GradientBackground";
 import MyButton from "../../components/Buttons/BigButton";
 
