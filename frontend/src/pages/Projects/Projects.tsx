@@ -1,8 +1,14 @@
 import NormalBackground from "../../components/NormalBackground/NormalBackground";
 import NavBar from "../../components/Navbar/NavBar";
+
 import Markdown from "react-markdown";
+import rehypeKatex from "rehype-katex";
+import remarkMath from "remark-math";
+import "katex/dist/katex.min.css";
+import rehypeRaw from "rehype-raw";
 
 import "../Projects/Projects.scss";
+import "../../articles/Tags.scss";
 
 import Test from "../../articles/Test.md?raw";
 
@@ -17,7 +23,12 @@ const Projects = () => {
           <div className="flex py-16 pl-16 pr-8 w-full h-full">
             <div className="flex-grow max-w-none w-full h-full prose prose-invert overflow-y-auto add-custom-scrollbar">
               <div className="pr-8">
-                <Markdown>{Test}</Markdown>
+                <Markdown
+                  remarkPlugins={[remarkMath]}
+                  rehypePlugins={[rehypeKatex, rehypeRaw]}
+                >
+                  {Test}
+                </Markdown>
               </div>
             </div>
           </div>

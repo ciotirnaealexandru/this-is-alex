@@ -1,0 +1,19 @@
+@mixin tag {
+  padding: 3px 6px;
+  border-radius: 3px;
+  font-weight: bold;
+  font-size: 14px;
+  margin-left: 5px;
+}
+
+.linear-algebra {
+  @include tag;
+  background-color: #059b14;
+  color: #ffffff;
+}
+
+.python {
+  @include tag;
+  background-color: #326ef0;
+  color: #ffffff;
+}
