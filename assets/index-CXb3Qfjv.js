@@ -336,10 +336,27 @@ l0,-`+(a+144)+`c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 
 ## A linear algebra background
 
-Throughout my first year of college, specifically in my **Linear Algebra** class (in romanian, **Algebră liniară, geometrie analitică si ecuații diferențiale**), we studied the concept of **linear tranformations** and their real world applications.
+Throughout my first year of college, in my **Linear Algebra** class (in romanian, **Algebră liniară, geometrie analitică si ecuații diferențiale**), we studied the concept of **linear tranformations** and their real world applications.
 
-Mathematically, we saw that any matrix **$A \\in \\mathcal{M}_{m,n}(\\mathbb{R})$** defines a linear transformation **$f : \\mathbb{R}^n \\to \\mathbb{R}^m$**, given by **$f(x) = Ax$**. One such linear transformation is the **shear transformation**, which has the 2 following matrix definitions: **$\\begin{pmatrix} 1 & a\\\\ 0 & 1 \\end{pmatrix}$** or **$\\begin{pmatrix} 1 & 0\\\\ a & 1 \\end{pmatrix}$**, **$a \\in \\mathbb{R} $**. 
+Mathematically, we saw that any matrix **$A \\in \\mathcal{M}_{m,n}(\\mathbb{R})$** defines a linear transformation **$f : \\mathbb{R}^n \\to \\mathbb{R}^m$**, given by **$f(x) = Ax$**. One such linear transformation is the **shear transformation**, which can have the 2 following definitions: **$A =\\begin{pmatrix} 1 & a\\\\ 0 & 1 \\end{pmatrix}$** or **$\\begin{pmatrix} 1 & 0\\\\ a & 1 \\end{pmatrix}$**, **$a \\in \\mathbb{R} $**. 
 
-Why would this be usefull? Visually, a shear transform can be used to _warp_ a domain, and as such, change the appearance of an image. For example, let's consider the **horizontal sheer transform**:
+Why would this be useful? Visually, a shear transform can be used to _warp_ a domain, and as such, change the appearance of an image. For example, let's consider the **horizontal sheer transformation**:
 
-![](./images/horizontal_sheer_transform.png)`,KN=()=>Re.jsx(O9,{children:Re.jsxs("div",{className:"absolute top-0 left-0 w-screen h-screen flex flex-col justify-between",children:[Re.jsx(D9,{}),Re.jsxs("div",{className:"flex flex-row w-full h-full overflow-hidden",children:[Re.jsx("div",{className:"bg-[#030712] w-lg"}),Re.jsx("div",{className:"flex py-16 pl-16 pr-8 w-full h-full",children:Re.jsx("div",{className:"flex-grow max-w-none w-full h-full prose prose-invert overflow-y-auto add-custom-scrollbar",children:Re.jsx("div",{className:"pr-8",children:Re.jsx(Fv,{remarkPlugins:[MA],rehypePlugins:[vA,jN],children:QN})})})})]})]})});function ZN(){const[e,t]=ae.useState(!0);return ae.useEffect(()=>{e&&t(!1)},[]),Re.jsxs(Qb,{children:[e&&Re.jsx(Ls,{path:"/",element:Re.jsx(Xb,{to:"/about",replace:!0})}),Re.jsx(Ls,{path:"/about",element:Re.jsx(k9,{})}),Re.jsx(Ls,{path:"/projects",element:Re.jsx(KN,{})})]})}nb.createRoot(document.getElementById("root")).render(Re.jsx(E9,{basename:"/this-is-alex/",children:Re.jsx(ae.StrictMode,{children:Re.jsx(ZN,{})})}));
+$$
+\\begin{pmatrix} x'\\\\ y' \\end{pmatrix} = \\begin{pmatrix} 1 & a\\\\ 0 & 1 \\end{pmatrix} \\begin{pmatrix} x\\\\ y \\end{pmatrix}
+$$
+
+If we multiply the right side, we see that we basically assign the old $\\begin{pmatrix} x, y \\end{pmatrix}$ coordonate pair a new $\\begin{pmatrix} x', y' \\end{pmatrix}$ point in space:
+
+$$
+\\begin{pmatrix} x'\\\\ y' \\end{pmatrix} = \\begin{pmatrix} x + ay\\\\ y \\end{pmatrix} 
+$$
+
+This is a **graphical interpretation** of a horizontal shear transformation applied over a square domain. We applied this transformation for each point in that domain:
+
+<img src='images/Holbein_and_Linear_Transformations/shear.png' alt='linear_transformation' class='full'>
+
+## "The Ambassadors", by H. Holbein
+
+<img src='images/Holbein_and_Linear_Transformations/The_Ambassadors.jpg' alt='linear_transformation' class='semi'>
+`,KN=()=>Re.jsx(O9,{children:Re.jsxs("div",{className:"absolute top-0 left-0 w-screen h-screen flex flex-col justify-between",children:[Re.jsx(D9,{}),Re.jsxs("div",{className:"flex flex-row w-full h-full overflow-hidden",children:[Re.jsx("div",{className:"bg-[#030712] w-lg"}),Re.jsx("div",{className:"flex py-16 pl-16 pr-8 w-full h-full",children:Re.jsx("div",{className:"flex-grow max-w-none w-full h-full prose prose-invert overflow-y-auto add-custom-scrollbar",children:Re.jsx("div",{className:"pr-8",children:Re.jsx(Fv,{remarkPlugins:[MA],rehypePlugins:[vA,jN],children:QN})})})})]})]})});function ZN(){const[e,t]=ae.useState(!0);return ae.useEffect(()=>{e&&t(!1)},[]),Re.jsxs(Qb,{children:[e&&Re.jsx(Ls,{path:"/",element:Re.jsx(Xb,{to:"/about",replace:!0})}),Re.jsx(Ls,{path:"/about",element:Re.jsx(k9,{})}),Re.jsx(Ls,{path:"/projects",element:Re.jsx(KN,{})})]})}nb.createRoot(document.getElementById("root")).render(Re.jsx(E9,{basename:"/this-is-alex/",children:Re.jsx(ae.StrictMode,{children:Re.jsx(ZN,{})})}));
