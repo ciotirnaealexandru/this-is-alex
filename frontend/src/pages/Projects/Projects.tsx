@@ -9,6 +9,7 @@ import rehypeRaw from "rehype-raw";
 
 import "../Projects/Projects.scss";
 import "../../articles/Tags.scss";
+import "../../articles/Images.scss";
 
 import Test from "../../articles/Holbein_and_Linear_Transformations/Holbein_and_Linear_Transformations.md?raw";
 
