@@ -1,5 +1,6 @@
 import NormalBackground from "../../components/NormalBackground/NormalBackground";
 import NavBar from "../../components/Navbar/NavBar";
+import DropdownMenu from "../../components/DropdownMenu/DropdownMenu";
 
 import Markdown from "react-markdown";
 import rehypeKatex from "rehype-katex";
@@ -20,7 +21,9 @@ const Projects = () => {
         <NavBar />
         <div className="flex flex-row w-full h-full overflow-hidden">
           {/* The title column*/}
-          <div className="bg-[#030712] w-lg"></div>
+          <div className="bg-[#030712] w-lg">
+            <DropdownMenu />
+          </div>
           <div className="flex py-16 pl-16 pr-8 w-full h-full">
             <div className="flex-grow max-w-none w-full h-full prose prose-invert overflow-y-auto add-custom-scrollbar">
               <div className="pr-8">
