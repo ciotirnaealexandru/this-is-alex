@@ -35,9 +35,12 @@ const MenuElement = ({
         className="flex flex-col w-full font-semibold "
       >
         <div className="flex flex-row items-center">
+          {/* Emoji */}
           <span className="text-lg mb-1 mr-2">{emoji}</span>
           <div className="flex flex-row items-center hover:cursor-pointer">
+            {/* Text */}
             <div className="text-white text-lg">{text}</div>
+            {/* Arrow icon */}
             {arrow}
           </div>
         </div>

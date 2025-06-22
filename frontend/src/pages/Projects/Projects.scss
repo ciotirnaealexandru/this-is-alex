@@ -1,15 +1,20 @@
 /* Custom Scrollbar Styles */
 .add-custom-scrollbar {
   overflow-y: scroll;
-  -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
 }
 
 .add-custom-scrollbar::-webkit-scrollbar {
   width: 6px;
 }
 
+.add-custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+  margin-top: 64px;
+  margin-bottom: 64px;
+}
+
 .add-custom-scrollbar::-webkit-scrollbar-thumb {
-  // make it transparent for now ultil i figure out how to fix the padding top bottom right
-  background: white;
+  background: white; /* Transparent for testing */
   border-radius: 10px;
 }

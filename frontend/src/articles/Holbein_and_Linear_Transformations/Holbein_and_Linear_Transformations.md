@@ -28,4 +28,4 @@ This is a **graphical interpretation** of a horizontal shear transformation appl
 
 ## "The Ambassadors", by H. Holbein
 
-<img src='images/Holbein_and_Linear_Transformations/The_Ambassadors.jpg' alt='linear_transformation' class='semi'>
+<img src='images/Holbein_and_Linear_Transformations/The_Ambassadors.jpg' alt='linear_transformation' class='full'>
