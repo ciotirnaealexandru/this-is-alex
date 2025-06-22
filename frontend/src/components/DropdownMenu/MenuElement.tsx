@@ -6,31 +6,36 @@ import { useState } from "react";
 interface MenuElementProps {
   children?: React.ReactNode;
   text: string;
+  emoji?: string;
+  link?: string;
+  open?: boolean;
 }
 
-const MenuElement = ({ children, text }: MenuElementProps) => {
-  const [state, setState] = useState(0);
+const MenuElement = ({ children, text, emoji, open }: MenuElementProps) => {
+  // if i selected open={true}, open the folder by default
+  const [state, setState] = useState(open === true);
 
   let arrow = <div className="ml-4"></div>;
   if (children != null) {
-    if (state == 1) arrow = <GoTriangleRight className="text-white text-2xl" />;
-    else arrow = <GoTriangleDown className="text-white text-2xl" />;
+    if (state) arrow = <GoTriangleDown className="text-white text-2xl" />;
+    else arrow = <GoTriangleRight className="text-white text-2xl" />;
   }
 
   return (
     <>
       <button
-        onClick={() => setState(state == 1 ? 0 : 1)}
+        onClick={() => setState(!state)}
         className="flex flex-col w-full font-semibold"
       >
-        <div className="flex flex-row">
+        <div className="flex flex-row items-center">
+          <span className="text-lg mb-1 mr-2">{emoji}</span>
+          <div className="text-white text-lg ">{text}</div>
           {arrow}
-          <div className="text-white">{text}</div>
         </div>
       </button>
 
       {/* Children */}
-      {state == 1 ? <div className="flex flex-col ml-5">{children}</div> : null}
+      {state ? <div className="flex flex-col ml-6">{children}</div> : null}
     </>
   );
 };
