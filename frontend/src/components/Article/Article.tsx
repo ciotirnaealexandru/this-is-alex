@@ -11,14 +11,14 @@ const markdownFiles = import.meta.glob("../../articles/**/*.md", {
 });
 
 interface ArticleProps {
-  link: string;
+  article?: string;
 }
 
-const Article = ({ link }: ArticleProps) => {
+const Article = ({ article }: ArticleProps) => {
   const [content, setContent] = useState<string>("Loading...");
 
   useEffect(() => {
-    const path = `../../articles/${link}`;
+    const path = `../../articles/${article}`;
     console.log({ path });
 
     const loader = markdownFiles[path];
@@ -28,7 +28,7 @@ const Article = ({ link }: ArticleProps) => {
     } else {
       setContent("Markdown file not found.");
     }
-  }, [link]);
+  }, [article]);
 
   return (
     <div className="max-w-none w-full h-full prose prose-invert overflow-y-auto add-custom-scrollbar">

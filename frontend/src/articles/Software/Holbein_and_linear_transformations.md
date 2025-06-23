@@ -1,4 +1,4 @@
-# Holbein and Linear Transformations
+# Holbein and linear transformations
 
 **Tags:**
 <span class="linear-algebra">Linear Algebra</span>

@@ -20,12 +20,12 @@ const Projects = () => {
         <div className="flex flex-row w-full h-full overflow-hidden">
           {/* The title column with the dropdown menu*/}
           <div className="bg-[#030712] w-lg">
-            <DropdownMenu />
+            <DropdownMenu setArticle={setArticle} />
           </div>
 
           {/* The article */}
           <div className="flex pl-16 pr-8 w-full h-full">
-            <Article link={article} />
+            <Article article={article} />
           </div>
         </div>
       </div>
