@@ -1,10 +1,7 @@
 import { Routes, Route, Navigate } from "react-router";
 import { useEffect, useState } from "react";
 
-{
-  /*import About from "./pages/About/About";*/
-}
-
+import About from "./pages/About/About";
 import Projects from "./pages/Projects/Projects";
 
 function App() {
@@ -22,8 +19,7 @@ function App() {
         <Route path="/" element={<Navigate to="/projects" replace />} />
       )}
 
-      {/* <Route path="/about" element={<About />} /> */}
-
+      <Route path="/about" element={<About />} />
       <Route path="/projects" element={<Projects />} />
     </Routes>
   );

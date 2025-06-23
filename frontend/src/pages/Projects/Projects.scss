@@ -16,5 +16,14 @@
 
 .add-custom-scrollbar::-webkit-scrollbar-thumb {
   background: white; /* Transparent for testing */
-  border-radius: 10px;
+  border-radius: 0px;
+}
+
+@media (max-width: 768px){
+  .add-custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: transparent;
+  }
+  .add-custom-scrollbar::-webkit-scrollbar {
+  width: 0px;
+}
 }

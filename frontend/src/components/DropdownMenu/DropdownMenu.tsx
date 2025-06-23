@@ -1,4 +1,3 @@
-import "./DropdownMenu.scss";
 import MenuElement from "./MenuElement";
 
 interface DropdownMenuProps {

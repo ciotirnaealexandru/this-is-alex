@@ -32,7 +32,7 @@ const Article = ({ article }: ArticleProps) => {
 
   return (
     <div className="max-w-none w-full h-full prose prose-invert overflow-y-auto add-custom-scrollbar">
-      <div className="pr-16 py-16">
+      <div className="mr-16 py-16">
         <Markdown
           remarkPlugins={[remarkMath]}
           rehypePlugins={[rehypeKatex, rehypeRaw]}
