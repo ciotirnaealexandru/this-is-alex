@@ -1,19 +1,29 @@
-import { Routes, Route, Navigate, useLocation } from "react-router";
-import About from "./pages/About/About";
+import { Routes, Route, Navigate } from "react-router";
+import { useEffect, useState } from "react";
+
+{
+  /*import About from "./pages/About/About";*/
+}
+
 import Projects from "./pages/Projects/Projects";
 
 function App() {
-  const location = useLocation();
+  const [firstLoad, setFirstLoad] = useState(true);
+
+  useEffect(() => {
+    if (firstLoad) {
+      setFirstLoad(false);
+    }
+  }, []);
 
   return (
     <Routes>
-      <Route
-        path="/"
-        element={
-          location.pathname === "/" ? <Navigate to="/about" replace /> : null
-        }
-      />
-      <Route path="/about" element={<About />} />
+      {firstLoad && (
+        <Route path="/" element={<Navigate to="/projects" replace />} />
+      )}
+
+      {/* <Route path="/about" element={<About />} /> */}
+
       <Route path="/projects" element={<Projects />} />
     </Routes>
   );
