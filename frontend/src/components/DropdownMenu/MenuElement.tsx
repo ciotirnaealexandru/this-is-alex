@@ -35,7 +35,7 @@ const MenuElement = ({
   let sizedText;
   if (type == "domain")
     sizedText = <div className="text-white text-lg font-bold">{text}</div>;
-  else sizedText = <div className="text-white text-md">{text}</div>;
+  else sizedText = <div className="text-white text-md text-left">{text}</div>;
 
   return (
     <>
